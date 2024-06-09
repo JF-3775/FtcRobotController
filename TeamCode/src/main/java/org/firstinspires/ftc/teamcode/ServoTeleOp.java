@@ -26,6 +26,9 @@ public class ServoTeleOp extends LinearOpMode {
         frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
         backRight.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        telemetry.addLine("All motors and servos initialized");
+        telemetry.update();
+
         waitForStart();
 
         if(isStopRequested()) return;
@@ -34,6 +37,10 @@ public class ServoTeleOp extends LinearOpMode {
             y = -gamepad1.left_stick_y;
             x = gamepad1.left_stick_x;
             rx = gamepad1.right_stick_x;
+
+            telemetry.addLine("y = " + y);
+            telemetry.addLine("x = " + x);
+            telemetry.addLine("rx = " + rx);
 
             double denominator = Math.abs(y)+Math.abs(x)+Math.abs(rx);
 
@@ -49,10 +56,21 @@ public class ServoTeleOp extends LinearOpMode {
             double backLeftPower = (y * 0.75 - x + rx * 0.75)/denominator;
             double backRightPower = (y * 0.75 + x - rx * 0.75)/denominator;
 
+            telemetry.addLine();
+            telemetry.addLine("frontLeftPower = " + frontLeftPower);
+            telemetry.addLine("frontRightPower = " + frontRightPower);
+            telemetry.addLine("backLeftPower = " + backLeftPower);
+            telemetry.addLine("backRightPower = " + backRightPower);
+            telemetry.update();
+
             frontLeft.setPower(frontLeftPower);
             frontRight.setPower(frontRightPower);
             backLeft.setPower(backLeftPower);
             backRight.setPower(backRightPower);
+
+            if (gamepad1.right_bumper) {
+                Launcher.setPosition(1);
+            }
         }
     }
 }
