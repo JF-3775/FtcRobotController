@@ -1,15 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.widget.Switch;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp (name = "servoTeleOp", group = "TeleOp")
+@TeleOp (name = "ObjectTeleOp", group = "TeleOp")
 
-public class ServoTeleOp extends LinearOpMode {
+public class ObjectTeleOp extends LinearOpMode {
 
     DcMotor frontLeft, frontRight, backLeft, backRight;
     Servo launcher, wrist, claw;
