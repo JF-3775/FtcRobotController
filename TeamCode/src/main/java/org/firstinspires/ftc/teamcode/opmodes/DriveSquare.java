@@ -54,7 +54,7 @@ public class DriveSquare extends LinearOpMode
             leftMotor.setPower(0.25);
             rightMotor.setPower(-0.25);
 
-            sleep(1700); // adjust this delay to get the bot to rotate 90 degrees.
+            sleep(3400); // adjust this delay to get the bot to rotate 90 degrees.
 
             leftMotor.setPower(0.0);
             rightMotor.setPower(0.0);
