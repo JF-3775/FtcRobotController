@@ -21,9 +21,9 @@ public class DriveForward extends LinearOpMode
     @Override
     public void runOpMode() throws InterruptedException
     {
-        leftMotor = hardwareMap.dcMotor.get("left_motor");
+        leftMotor = hardwareMap.dcMotor.get("back_left");
 
-        rightMotor = hardwareMap.dcMotor.get("right_motor");
+        rightMotor = hardwareMap.dcMotor.get("back_right");
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
 
